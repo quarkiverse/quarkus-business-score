@@ -2,24 +2,16 @@
 
 [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.businessscore/quarkus-business-score?logo=apache-maven&style=flat-square)](https://search.maven.org/artifact/io.quarkiverse.businessscore/quarkus-business-score)
 
-## Welcome to Quarkiverse!
+This extension offers a convenient way to detect application _zombies_, i.e. applications that live/communicate but **do not produce any business value**.
+"business value" means anything that helps to solve a problem of an application user. 
+For example storing orders, serving content or performing computational tasks. 
+Infrastructure stuff (logs, stats, metrics, health checks) usually does not produce a business value.
 
-Congratulations and thank you for creating a new Quarkus extension project in Quarkiverse!
+### The concepts
 
-Feel free to replace this content with the proper description of your new project and necessary instructions how to use and contribute to it.
-
-You can find the basic info, Quarkiverse policies and conventions in [the Quarkiverse wiki](https://github.com/quarkiverse/quarkiverse/wiki).
-
-In case you are creating a Quarkus extension project for the first time, please follow [Building My First Extension](https://quarkus.io/guides/building-my-first-extension) guide.
-
-Other useful articles related to Quarkus extension development can be found under the [Writing Extensions](https://quarkus.io/guides/#writing-extensions) guide category on the [Quarkus.io](https://quarkus.io) website.
-
-Thanks again, good luck and have fun!
-
-## Documentation
-
-The documentation for this extension should be maintained as part of this repository and it is stored in the `docs/` directory.
-
-The layout should follow the [Antora's Standard File and Directory Set](https://docs.antora.org/antora/2.3/standard-directories/).
-
-Once the docs are ready to be published, please open a PR including this repository in the [Quarkiverse Docs Antora playbook](https://github.com/quarkiverse/quarkiverse-docs/blob/main/antora-playbook.yml#L7). See an example [here](https://github.com/quarkiverse/quarkiverse-docs/pull/1).
+In a nutshell, the extension manages the **business score** which is a numeric representation of the business value. 
+An application emits **score records** to increase the business score, either directly with the `BusinessScore` API or with an interceptor binding.
+The records are only kept for the specific amount of time - **time window**. 
+The sum of all score records in the current time window is the **current business score**. 
+The **zombie threshold** defines the point at which the application is considered a _zombie_.
+An external system or the application itself can periodically check the business score and react appropriately.
