@@ -10,7 +10,7 @@ h|[[quarkus-business-score_configuration]]link:#quarkus-business-score_configura
 h|Type
 h|Default
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus.business-score.root-path]]`link:#quarkus-business-score_quarkus.business-score.root-path[quarkus.business-score.root-path]`
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus-business-score-root-path]]`link:#quarkus-business-score_quarkus-business-score-root-path[quarkus.business-score.root-path]`
 
 
 [.description]
@@ -29,7 +29,7 @@ endif::add-copy-button-to-env-var[]
 |`business-score`
 
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus.business-score.zombie-threshold]]`link:#quarkus-business-score_quarkus.business-score.zombie-threshold[quarkus.business-score.zombie-threshold]`
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus-business-score-zombie-threshold]]`link:#quarkus-business-score_quarkus-business-score-zombie-threshold[quarkus.business-score.zombie-threshold]`
 
 
 [.description]
@@ -48,7 +48,7 @@ endif::add-copy-button-to-env-var[]
 |`10`
 
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus.business-score.time-window]]`link:#quarkus-business-score_quarkus.business-score.time-window[quarkus.business-score.time-window]`
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus-business-score-time-window]]`link:#quarkus-business-score_quarkus-business-score-time-window[quarkus.business-score.time-window]`
 
 
 [.description]
@@ -64,11 +64,11 @@ ifndef::add-copy-button-to-env-var[]
 Environment variable: `+++QUARKUS_BUSINESS_SCORE_TIME_WINDOW+++`
 endif::add-copy-button-to-env-var[]
 --|link:https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html[Duration]
-  link:#duration-note-anchor-{summaryTableId}[icon:question-circle[], title=More information about the Duration format]
+  link:#duration-note-anchor-{summaryTableId}[icon:question-circle[title=More information about the Duration format]]
 |`7D`
 
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus.business-score.zombie-check-interval]]`link:#quarkus-business-score_quarkus.business-score.zombie-check-interval[quarkus.business-score.zombie-check-interval]`
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus-business-score-zombie-check-interval]]`link:#quarkus-business-score_quarkus-business-score-zombie-check-interval[quarkus.business-score.zombie-check-interval]`
 
 
 [.description]
@@ -82,7 +82,7 @@ ifndef::add-copy-button-to-env-var[]
 Environment variable: `+++QUARKUS_BUSINESS_SCORE_ZOMBIE_CHECK_INTERVAL+++`
 endif::add-copy-button-to-env-var[]
 --|link:https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html[Duration]
-  link:#duration-note-anchor-{summaryTableId}[icon:question-circle[], title=More information about the Duration format]
+  link:#duration-note-anchor-{summaryTableId}[icon:question-circle[title=More information about the Duration format]]
 |`6H`
 
 |===
@@ -92,7 +92,7 @@ ifndef::no-duration-note[]
 .About the Duration format
 ====
 To write duration values, use the standard `java.time.Duration` format.
-See the link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)[Duration#parse() javadoc] for more information.
+See the link:https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)[Duration#parse() Java API documentation] for more information.
 
 You can also use a simplified format, starting with a number:
 
