@@ -1,0 +1,5 @@
+name: quarkus-business-score
+title: Quarkus Business Score
+version: dev
+nav:
+  - modules/ROOT/nav.adoc

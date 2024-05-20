@@ -1,0 +1,107 @@
+
+:summaryTableId: quarkus-business-score
+[.configuration-legend]
+icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
+[.configuration-reference.searchable, cols="80,.^10,.^10"]
+|===
+
+h|[[quarkus-business-score_configuration]]link:#quarkus-business-score_configuration[Configuration property]
+
+h|Type
+h|Default
+
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus.business-score.root-path]]`link:#quarkus-business-score_quarkus.business-score.root-path[quarkus.business-score.root-path]`
+
+
+[.description]
+--
+The root path for management endpoints.
+
+By default, this value is resolved as a path relative to `quarkus.http.non-application-root-path`. If the management interface is enabled, the value will be resolved as a path relative to `quarkus.management.root-path`.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_BUSINESS_SCORE_ROOT_PATH+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_BUSINESS_SCORE_ROOT_PATH+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|`business-score`
+
+
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus.business-score.zombie-threshold]]`link:#quarkus-business-score_quarkus.business-score.zombie-threshold[quarkus.business-score.zombie-threshold]`
+
+
+[.description]
+--
+The point at which the application is considered a zombie.
+
+An application is considered a zombie if the current score is below the threshold in the current time window.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_BUSINESS_SCORE_ZOMBIE_THRESHOLD+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_BUSINESS_SCORE_ZOMBIE_THRESHOLD+++`
+endif::add-copy-button-to-env-var[]
+--|long 
+|`10`
+
+
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus.business-score.time-window]]`link:#quarkus-business-score_quarkus.business-score.time-window[quarkus.business-score.time-window]`
+
+
+[.description]
+--
+The amount of time a score record is kept alive.
+
+By default, it is kept for one week.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_BUSINESS_SCORE_TIME_WINDOW+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_BUSINESS_SCORE_TIME_WINDOW+++`
+endif::add-copy-button-to-env-var[]
+--|link:https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html[Duration]
+  link:#duration-note-anchor-{summaryTableId}[icon:question-circle[], title=More information about the Duration format]
+|`7D`
+
+
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus.business-score.zombie-check-interval]]`link:#quarkus-business-score_quarkus.business-score.zombie-check-interval[quarkus.business-score.zombie-check-interval]`
+
+
+[.description]
+--
+The interval after which the application tests itself and if `BusinessScore++#++test()` returns `true` then logs a warning and fires a CDI event of type `BusinessScore.ZombieStatus` synchronously.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_BUSINESS_SCORE_ZOMBIE_CHECK_INTERVAL+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_BUSINESS_SCORE_ZOMBIE_CHECK_INTERVAL+++`
+endif::add-copy-button-to-env-var[]
+--|link:https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html[Duration]
+  link:#duration-note-anchor-{summaryTableId}[icon:question-circle[], title=More information about the Duration format]
+|`6H`
+
+|===
+ifndef::no-duration-note[]
+[NOTE]
+[id='duration-note-anchor-{summaryTableId}']
+.About the Duration format
+====
+To write duration values, use the standard `java.time.Duration` format.
+See the link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)[Duration#parse() javadoc] for more information.
+
+You can also use a simplified format, starting with a number:
+
+* If the value is only a number, it represents time in seconds.
+* If the value is a number followed by `ms`, it represents time in milliseconds.
+
+In other cases, the simplified format is translated to the `java.time.Duration` format for parsing:
+
+* If the value is a number followed by `h`, `m`, or `s`, it is prefixed with `PT`.
+* If the value is a number followed by `d`, it is prefixed with `P`.
+====
+endif::no-duration-note[]
