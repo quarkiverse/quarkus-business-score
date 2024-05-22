@@ -182,6 +182,9 @@ class BusinessScoreImpl implements BusinessScore {
 
     @Override
     public void setZombieThreshold(long value) {
+        if (value <= 0) {
+            throw new IllegalArgumentException("Zombie threshold value must be positive: " + value);
+        }
         this.zombieThreshold.set(value);
     }
 

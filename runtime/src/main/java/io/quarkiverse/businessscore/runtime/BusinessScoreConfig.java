@@ -39,7 +39,7 @@ public interface BusinessScoreConfig {
     Duration timeWindow();
 
     /**
-     * The interval after which the application tests itself and if {@link BusinessScore#test()} returns
+     * The interval after which the application tests itself and if {@link BusinessScore.ZombieStatus#isZombie()} returns
      * {@code true} then logs a warning and fires a CDI event of type {@link BusinessScore.ZombieStatus} synchronously.
      */
     @WithDefault("6H")

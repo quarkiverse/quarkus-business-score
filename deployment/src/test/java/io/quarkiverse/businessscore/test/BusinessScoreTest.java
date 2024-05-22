@@ -32,6 +32,9 @@ public class BusinessScoreTest {
 
     @Test
     public void testScore() {
+        assertThrows(IllegalArgumentException.class, () -> businessScore.setZombieThreshold(-10));
+        assertThrows(NullPointerException.class, () -> businessScore.setTimeWindow(null));
+
         // Test scoring with interceptor and API
         assertEquals(0, businessScore.getCurrent());
         assertFalse(businessScore.test().isZombie());
