@@ -2,7 +2,9 @@
 
 include::./includes/attributes.adoc[]
 
-TIP: Describe what the extension does here.
+This extension offers a convenient way to detect application _zombies_, i.e. applications that live and communicate but **do not produce any business value**.
+The "business value" means anything that helps to solve a problem of an application user. 
+Infrastructure stuff (logs, stats, metrics, health checks) usually does not produce a business value.
 
 == Installation
 
@@ -19,9 +21,108 @@ For instance, with Maven, add the following dependency to your POM file:
 </dependency>
 ----
 
+== The concepts
+
+In a nutshell, the extension manages the **business score** which is a numeric representation of the business value. 
+An application emits **score records** to increase the business score, either directly with the `BusinessScore` API or with an interceptor binding.
+The records are only kept for the specific amount of time - **time window**. 
+The sum of all score records in the current time window is the **current business score**. 
+The **zombie threshold** defines the point at which the application is considered a _zombie_.
+An external system or the application itself can periodically check the business score and react appropriately.
+
+== How to score
+
+Quarkus provides a CDI bean of type `io.quarkiverse.businessscore.BusinessScore` that can be used to increase and also to query the current score.
+
+.`BusinessScore` example
+[source,java]
+----
+import jakarta.enterprise.context.ApplicationScoped;
+import io.quarkiverse.businessscore.BusinessScore;
+
+@ApplicationScoped
+public class MyService {
+
+   @Inject
+   BusinessScore bs; <1>
+   
+   public void doSomeBusiness() {
+     bs.score(10); <2>
+     // ...
+   }
+
+}
+----
+<1> Inject the business score of the current application.
+<2> Increase the business score by `10`.
+
+Alternatively, the `@io.quarkiverse.businessscore.Scored` interceptor binding can be used to increase the score using an interceptor.
+
+.`@Scored` example
+[source,java]
+----
+import 
+import io.quarkiverse.businessscore.BusinessScore;
+
+@ApplicationScoped
+public class MyService {
+
+   @Scored(10) <1>
+   public void doSomeBusiness() {
+     // ...
+   }
+
+}
+----
+<1> Increase the business score of the current application by `10`.
+
+== How to check the business score
+
+You can inject the `io.quarkiverse.businessscore.BusinessScore` and check the "zombie" status with the `BusinessScore#test()` method.
+
+.`BusinessScore` example
+[source,java]
+----
+import jakarta.enterprise.context.ApplicationScoped;
+import io.quarkiverse.businessscore.BusinessScore;
+
+@ApplicationScoped
+public class MyService {
+
+   @Inject
+   BusinessScore bs; <1>
+   
+   public void check() {
+     if (bs.test().isZombie()) {
+        // TODO warn the application admin!
+     }
+   }
+
+}
+----
+<1> Inject the business score of the current application.
+
+However, this extension tests the current application periodically and if a a _zombie_ is detected then it logs a warning and fires a CDI event of type `io.quarkiverse.businessscore.BusinessScore.ZombieStatus` synchronously.
+The interval is configurable with the `quarkus.business-score.zombie-check-interval` config property.
+
+.CDI observer example
+[source,java]
+----
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.event.Observes;
+
+@ApplicationScoped
+public class MyService {
+
+   void onZombie(@Observes BusinessScore.ZombieStatus status) { <1>
+      // TODO warn the application admin!
+   }
+
+}
+----
+<1> Observe the `ZombieStatus`.
+
 [[extension-configuration-reference]]
 == Extension Configuration Reference
-
-TIP: Remove this section if you don't have Quarkus configuration properties in your extension.
 
 include::includes/quarkus-business-score.adoc[leveloffset=+1, opts=optional]
