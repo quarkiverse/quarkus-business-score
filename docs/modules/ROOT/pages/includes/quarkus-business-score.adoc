@@ -10,25 +10,6 @@ h|[[quarkus-business-score_configuration]]link:#quarkus-business-score_configura
 h|Type
 h|Default
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus-business-score-root-path]]`link:#quarkus-business-score_quarkus-business-score-root-path[quarkus.business-score.root-path]`
-
-
-[.description]
---
-The root path for management endpoints.
-
-By default, this value is resolved as a path relative to `quarkus.http.non-application-root-path`. If the management interface is enabled, the value will be resolved as a path relative to `quarkus.management.root-path`.
-
-ifdef::add-copy-button-to-env-var[]
-Environment variable: env_var_with_copy_button:+++QUARKUS_BUSINESS_SCORE_ROOT_PATH+++[]
-endif::add-copy-button-to-env-var[]
-ifndef::add-copy-button-to-env-var[]
-Environment variable: `+++QUARKUS_BUSINESS_SCORE_ROOT_PATH+++`
-endif::add-copy-button-to-env-var[]
---|string 
-|`business-score`
-
-
 a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus-business-score-zombie-threshold]]`link:#quarkus-business-score_quarkus-business-score-zombie-threshold[quarkus.business-score.zombie-threshold]`
 
 
@@ -68,22 +49,21 @@ endif::add-copy-button-to-env-var[]
 |`7D`
 
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus-business-score-zombie-check-interval]]`link:#quarkus-business-score_quarkus-business-score-zombie-check-interval[quarkus.business-score.zombie-check-interval]`
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score_quarkus-business-score-auto-compact-limit]]`link:#quarkus-business-score_quarkus-business-score-auto-compact-limit[quarkus.business-score.auto-compact-limit]`
 
 
 [.description]
 --
-The interval after which the application tests itself and if `BusinessScore.ZombieStatus++#++isZombie()` returns `true` then logs a warning and fires a CDI event of type `BusinessScore.ZombieStatus` synchronously.
+The limit at which the extension will remove all records outside the current time window.
 
 ifdef::add-copy-button-to-env-var[]
-Environment variable: env_var_with_copy_button:+++QUARKUS_BUSINESS_SCORE_ZOMBIE_CHECK_INTERVAL+++[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_BUSINESS_SCORE_AUTO_COMPACT_LIMIT+++[]
 endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
-Environment variable: `+++QUARKUS_BUSINESS_SCORE_ZOMBIE_CHECK_INTERVAL+++`
+Environment variable: `+++QUARKUS_BUSINESS_SCORE_AUTO_COMPACT_LIMIT+++`
 endif::add-copy-button-to-env-var[]
---|link:https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html[Duration]
-  link:#duration-note-anchor-{summaryTableId}[icon:question-circle[title=More information about the Duration format]]
-|`6H`
+--|int 
+|`1000`
 
 |===
 ifndef::no-duration-note[]

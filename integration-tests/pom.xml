@@ -18,7 +18,7 @@
     </dependency>
     <dependency>
       <groupId>io.quarkiverse.businessscore</groupId>
-      <artifactId>quarkus-business-score</artifactId>
+      <artifactId>quarkus-business-score-http</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
