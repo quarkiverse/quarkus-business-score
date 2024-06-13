@@ -19,6 +19,7 @@ public class BusinessScoreResourceTest {
         given().when()
                 .get("/q/business-score")
                 .then().log().all()
+                .body("zombie", is(false))
                 .body("score", is(1))
                 .body("initialZombieThreshold", is(10))
                 .body("zombieThreshold", is(20))
