@@ -16,6 +16,7 @@
     <module>http</module>
     <module>health</module>
     <module>scheduler</module>
+    <module>mailer</module>
     <module>integration-tests</module>
     <module>docs</module>
   </modules>

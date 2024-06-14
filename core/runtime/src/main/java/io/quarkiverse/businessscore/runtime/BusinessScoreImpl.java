@@ -26,8 +26,6 @@ public class BusinessScoreImpl implements BusinessScore {
 
     private static final Logger LOG = Logger.getLogger(BusinessScoreImpl.class);
 
-    private static final int AUTO_COMPACT_LIMIT = 1000;
-
     private final Lock lock = new ReentrantLock();
     private final List<Score> records;
     private final AtomicLong zombieThreshold;
