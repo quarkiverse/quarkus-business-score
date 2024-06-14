@@ -1,0 +1,63 @@
+
+:summaryTableId: quarkus-business-score-mailer
+[.configuration-legend]
+icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
+[.configuration-reference.searchable, cols="80,.^10,.^10"]
+|===
+
+h|[[quarkus-business-score-mailer_configuration]]link:#quarkus-business-score-mailer_configuration[Configuration property]
+
+h|Type
+h|Default
+
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-from]]`link:#quarkus-business-score-mailer_quarkus-business-score-mailer-from[quarkus.business-score.mailer.from]`
+
+
+[.description]
+--
+The sender address.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_BUSINESS_SCORE_MAILER_FROM+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_BUSINESS_SCORE_MAILER_FROM+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|required icon:exclamation-circle[title=Configuration property is required]
+
+
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-to]]`link:#quarkus-business-score-mailer_quarkus-business-score-mailer-to[quarkus.business-score.mailer.to]`
+
+
+[.description]
+--
+The comma-separated list of recipients.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_BUSINESS_SCORE_MAILER_TO+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_BUSINESS_SCORE_MAILER_TO+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|required icon:exclamation-circle[title=Configuration property is required]
+
+
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-subject]]`link:#quarkus-business-score-mailer_quarkus-business-score-mailer-subject[quarkus.business-score.mailer.subject]`
+
+
+[.description]
+--
+The subject. The value is used as a Qute template with available data: `appName` and `appVersion`.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_BUSINESS_SCORE_MAILER_SUBJECT+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_BUSINESS_SCORE_MAILER_SUBJECT+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|`[ZOMBIE DETECTED] {appName}:{appVersion}`
+
+|===

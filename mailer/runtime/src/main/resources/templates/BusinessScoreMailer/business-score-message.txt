@@ -1,0 +1,5 @@
+Hello Quarkus user, an application zombie was detected!
+
+The business score [{status.score}] does not reach the zombie threshold [{status.threshold}] in the time window [{status.timeWindow}].
+
+This message was generated automatically at {timestamp}.
