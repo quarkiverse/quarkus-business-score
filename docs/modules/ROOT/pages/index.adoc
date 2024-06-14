@@ -104,7 +104,7 @@ public class MyService {
 
 == HTTP module
 
-This module integrates with the https://quarkus.io/guides/http-reference[HTTP extension] and registers two additional endpoints:
+This module integrates with the https://quarkus.io/guides/http-reference[HTTP extension] and registers two additional management endpoints:
 
 - `/q/business-score` - shows the current score, zombie status, etc.
 - `/q/business-score/records` - shows all score records in the current time window
@@ -150,6 +150,10 @@ This module integrates with the https://quarkus.io/guides/http-reference[HTTP ex
         {
             "value": 1,
             "timestamp": "2024-06-13T13:14:20.735Z"
+        },
+        {
+            "value": 1,
+            "timestamp": "2024-07-13T13:14:20.135Z"
         }
     ]
 }
@@ -191,6 +195,8 @@ public class MyService {
 == Health module
 
 This module integrates with the https://quarkus.io/guides/smallrye-health[SmallRye Health] extension and registers a https://smallrye.io/docs/smallrye-health/3.0.1/wellness.html[`@Wellness` health check] automatically.
+The name of the health check is `business-score`.
+It reports the status `UP` if the app is NOT considered a zombie.
 The health check is accessible through the `/q/health/well` endpoint.
  
 [source,xml,subs=attributes+]
@@ -200,6 +206,25 @@ The health check is accessible through the `/q/health/well` endpoint.
     <artifactId>quarkus-business-score-health</artifactId>
     <version>{project-version}</version>
 </dependency>
+----
+
+.`/q/health/well` response example
+[source,json]
+----
+{
+    "status": "UP",
+    "checks": [
+        {
+            "name": "business-score",
+            "status": "UP",
+            "data": {
+                "score": 0,
+                "zombieThreshold": 10,
+                "timeWindow": "PT10H"
+            }
+        }
+    ]
+}
 ----
 
 == Mailer module
