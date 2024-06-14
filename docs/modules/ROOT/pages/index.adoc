@@ -243,7 +243,7 @@ The `from`, `to` and `subject` fields are configurable.
  
 
 [[extension-configuration-reference]]
-=== Extension Configuration Reference
+== Extension Configuration Reference
 
 include::includes/quarkus-business-score.adoc[leveloffset=+1, opts=optional]
 
