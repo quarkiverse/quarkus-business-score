@@ -8,7 +8,7 @@
   </parent>
   <groupId>io.quarkiverse.businessscore</groupId>
   <artifactId>quarkus-business-score-parent</artifactId>
-  <version>999-SNAPSHOT</version>
+  <version>1.0.0.Alpha4</version>
   <packaging>pom</packaging>
   <name>Quarkus Business Score - Parent</name>
   <modules>
@@ -24,7 +24,7 @@
     <connection>scm:git:git@github.com:quarkiverse/quarkus-business-score.git</connection>
     <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-business-score.git</developerConnection>
     <url>https://github.com/quarkiverse/quarkus-business-score</url>
-    <tag>HEAD</tag>
+    <tag>1.0.0.Alpha4</tag>
   </scm>
   <properties>
     <compiler-plugin.version>3.13.0</compiler-plugin.version>
