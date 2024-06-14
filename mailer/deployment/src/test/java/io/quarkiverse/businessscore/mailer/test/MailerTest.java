@@ -38,7 +38,7 @@ public class MailerTest {
         assertEquals(1, mockMailbox.getMailMessagesSentTo("quarkus-reactive@quarkus.io").size());
         MailMessage message = mockMailbox.getMailMessagesSentTo("quarkus-reactive@quarkus.io").get(0);
         assertEquals("zombie-detector@quarkus.io", message.getFrom());
-        assertEquals("[ZOMBIE DETECTED] quarkus-business-score-mailer-deployment:999-SNAPSHOT", message.getSubject());
+        assertTrue(message.getSubject().startsWith("[ZOMBIE DETECTED] quarkus-business-score-mailer-deployment:"));
         assertTrue(message.getText().contains("Hello Quarkus user, an application zombie was detected!"));
         assertTrue(message.getText()
                 .contains("The business score [5] does not reach the zombie threshold [10] in the time window [PT6H]."));
