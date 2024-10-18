@@ -1,9 +1,9 @@
 name: Business Score - HTTP
-#description: Do something useful.
 metadata:
-#  keywords:
-#    - business-score
-#  guide: https://quarkiverse.github.io/quarkiverse-docs/business-score/dev/ # To create and publish this guide, see https://github.com/quarkiverse/quarkiverse/wiki#documenting-your-extension
-#  categories:
-#    - "miscellaneous"
-#  status: "preview"
+  keywords:
+    - business-score
+    - "http"
+  guide: https://quarkiverse.github.io/quarkiverse-docs/business-score/dev/
+  categories:
+    - "miscellaneous"
+  status: "preview"

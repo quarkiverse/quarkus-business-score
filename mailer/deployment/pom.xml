@@ -11,7 +11,7 @@
     <dependencies>
         <dependency>
             <groupId>io.quarkiverse.businessscore</groupId>
-            <artifactId>quarkus-business-score-scheduler-deployment</artifactId>
+            <artifactId>quarkus-business-score-self-check-deployment</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

@@ -160,17 +160,17 @@ This module integrates with the https://quarkus.io/guides/http-reference[HTTP ex
 ----
 
 [[scheduler_module]]
-== Scheduler module
+== Self-check module
 
 This module integrates with the https://quarkus.io/guides/scheduler-reference[Scheduler] extension and registers an additional `@Scheduled` method.
-I.e. the current application is tested periodically and if a _zombie_ is detected then a warning message is logged and a CDI event of type `io.quarkiverse.businessscore.BusinessScore.ZombieStatus` is fired synchronously.
-The CRON trigger used to schedule an automatic self-test can be configured with the `quarkus.business-score.scheduler.cron` configuration property.
+The current application is tested periodically and if a _zombie_ is detected then a warning message is logged and a CDI event of type `io.quarkiverse.businessscore.BusinessScore.ZombieStatus` is fired synchronously.
+The CRON trigger used to schedule an automatic self-check can be configured with the `quarkus.business-score.self-check.cron` configuration property.
 
 [source,xml,subs=attributes+]
 ----
 <dependency>
     <groupId>io.quarkiverse.businessscore</groupId>
-    <artifactId>quarkus-business-score-scheduler</artifactId>
+    <artifactId>quarkus-business-score-self-check</artifactId>
     <version>{project-version}</version>
 </dependency>
 ----
@@ -191,6 +191,8 @@ public class MyService {
 }
 ----
 <1> Observe the `ZombieStatus` and react appropriately.
+
+If `quarkus.business-score.self-check` is set to `true` then the shutdown process is initiated when a zombie a _zombie_ is detected.
 
 == Health module
 
@@ -249,7 +251,7 @@ include::includes/quarkus-business-score.adoc[leveloffset=+1, opts=optional]
 
 include::includes/quarkus-business-score-http.adoc[leveloffset=+1, opts=optional]
 
-include::includes/quarkus-business-score-scheduler.adoc[leveloffset=+1, opts=optional]
+include::includes/quarkus-business-score-self-check.adoc[leveloffset=+1, opts=optional]
 
 include::includes/quarkus-business-score-mailer.adoc[leveloffset=+1, opts=optional]
 

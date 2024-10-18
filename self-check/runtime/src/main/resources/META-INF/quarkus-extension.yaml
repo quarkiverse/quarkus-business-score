@@ -1,9 +1,8 @@
-name: Business Score - Mailer
+name: Business Score - Self-check
 metadata:
   keywords:
     - business-score
-    - "mail"
-    - "mailer"
+    - "self-check"
   guide: https://quarkiverse.github.io/quarkiverse-docs/business-score/dev/
   categories:
     - "miscellaneous"
