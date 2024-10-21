@@ -3,20 +3,20 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.quarkiverse.businessscore</groupId>
-        <artifactId>quarkus-business-score-mailer-parent</artifactId>
+        <artifactId>quarkus-business-score-self-check-parent</artifactId>
         <version>999-SNAPSHOT</version>
     </parent>
-    <artifactId>quarkus-business-score-mailer</artifactId>
-    <name>Quarkus Business Score - Mailer - Runtime</name>
+    <artifactId>quarkus-business-score-self-check</artifactId>
+    <name>Quarkus Business Score - Self-check - Runtime</name>
     <dependencies>
         <dependency>
             <groupId>io.quarkiverse.businessscore</groupId>
-            <artifactId>quarkus-business-score-self-check</artifactId>
+            <artifactId>quarkus-business-score</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-mailer</artifactId>
+            <artifactId>quarkus-scheduler</artifactId>
         </dependency>
     </dependencies>
     <build>

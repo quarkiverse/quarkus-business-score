@@ -3,12 +3,21 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.quarkiverse.businessscore</groupId>
-        <artifactId>quarkus-business-score-mailer-parent</artifactId>
+        <artifactId>quarkus-business-score-self-check-parent</artifactId>
         <version>999-SNAPSHOT</version>
     </parent>
-    <artifactId>quarkus-business-score-mailer</artifactId>
-    <name>Quarkus Business Score - Mailer - Runtime</name>
+    <artifactId>quarkus-business-score-self-check-deployment</artifactId>
+    <name>Quarkus Business Score - Self-check - Deployment</name>
     <dependencies>
+        <dependency>
+            <groupId>io.quarkiverse.businessscore</groupId>
+            <artifactId>quarkus-business-score-deployment</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-scheduler-deployment</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.quarkiverse.businessscore</groupId>
             <artifactId>quarkus-business-score-self-check</artifactId>
@@ -16,28 +25,12 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-mailer</artifactId>
+            <artifactId>quarkus-junit5-internal</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-extension-maven-plugin</artifactId>
-                <version>${quarkus.version}</version>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>extension-descriptor</goal>
-                        </goals>
-                        <configuration>
-                            <deployment>
-                                ${project.groupId}:${project.artifactId}-deployment:${project.version}</deployment>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>

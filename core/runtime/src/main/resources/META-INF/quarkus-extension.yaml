@@ -1,9 +1,10 @@
 name: Business Score
-#description: Do something useful.
+description: Offers a convenient way to detect application "zombies", i.e. applications that live and communicate but do not produce any business value.
 metadata:
-#  keywords:
-#    - business-score
-#  guide: https://quarkiverse.github.io/quarkiverse-docs/business-score/dev/ # To create and publish this guide, see https://github.com/quarkiverse/quarkiverse/wiki#documenting-your-extension
-#  categories:
-#    - "miscellaneous"
-#  status: "preview"
+  keywords:
+    - business-score
+    - "zombie"
+  guide: https://quarkiverse.github.io/quarkiverse-docs/business-score/dev/
+  categories:
+    - "miscellaneous"
+  status: "preview"
