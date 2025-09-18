@@ -1,4 +1,3 @@
-:summaryTableId: quarkus-business-score-http_quarkus-business-score
 [.configuration-legend]
 icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
 [.configuration-reference.searchable, cols="80,.^10,.^10"]
@@ -9,6 +8,10 @@ h|Type
 h|Default
 
 a|icon:lock[title=Fixed at build time] [[quarkus-business-score-http_quarkus-business-score-http-root-path]] [.property-path]##link:#quarkus-business-score-http_quarkus-business-score-http-root-path[`quarkus.business-score.http.root-path`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.business-score.http.root-path+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -29,5 +32,3 @@ endif::add-copy-button-to-env-var[]
 
 |===
 
-
-:!summaryTableId:
