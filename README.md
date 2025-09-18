@@ -15,4 +15,4 @@ The sum of all score records in the current time window is the **current busines
 The **zombie threshold** defines the point at which the application is considered a _zombie_.
 An external system or the application itself can periodically check the business score and react appropriately.
 
-Read the full [documentation](https://docs.quarkiverse.io/quarkus-business-score/dev/index.html).
+Read the full [documentation](https://docs.quarkiverse.io/quarkus-business-score/dev/index.html) or the [blogpost from Markus Eisele](https://www.the-main-thread.com/p/quarkus-business-score-java-tutorial-detect-zombie-apps).
