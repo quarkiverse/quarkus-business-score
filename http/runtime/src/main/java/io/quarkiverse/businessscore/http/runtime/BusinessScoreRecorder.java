@@ -5,9 +5,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
+import org.eclipse.microprofile.config.ConfigProvider;
+
 import io.quarkiverse.businessscore.BusinessScore;
 import io.quarkus.arc.Arc;
-import io.quarkus.runtime.ApplicationConfig;
 import io.quarkus.runtime.annotations.Recorder;
 import io.vertx.core.Handler;
 import io.vertx.core.http.HttpHeaders;
@@ -30,7 +31,7 @@ public class BusinessScoreRecorder {
                 resp.headers().set(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 
                 JsonObject json = new JsonObject();
-                addApplicationInfo(json, http.appConfig);
+                addApplicationInfo(json);
 
                 BusinessScore.ZombieStatus status = http.score.test();
                 json.put("zombie", status.isZombie());
@@ -60,7 +61,7 @@ public class BusinessScoreRecorder {
                 resp.headers().set(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 
                 JsonObject json = new JsonObject();
-                addApplicationInfo(json, http.appConfig);
+                addApplicationInfo(json);
 
                 JsonArray recordsJson = new JsonArray();
                 for (BusinessScore.Score r : http.score.getCurrentRecords()) {
@@ -84,11 +85,13 @@ public class BusinessScoreRecorder {
         };
     }
 
-    private static void addApplicationInfo(JsonObject json, ApplicationConfig applicationConfig) {
+    private static void addApplicationInfo(JsonObject json) {
         json.put("serverTime", LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         JsonObject appJson = new JsonObject();
-        appJson.put("name", applicationConfig.name.orElse("n/a"));
-        appJson.put("version", applicationConfig.version.orElse("n/a"));
+        appJson.put("name",
+                ConfigProvider.getConfig().getOptionalValue("quarkus.application.name", String.class).orElse("n/a"));
+        appJson.put("version",
+                ConfigProvider.getConfig().getOptionalValue("quarkus.application.version", String.class).orElse("n/a"));
         json.put("application", appJson);
     }
 

@@ -1,4 +1,3 @@
-:summaryTableId: quarkus-business-score-mailer_quarkus-business-score
 [.configuration-legend]
 icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
 [.configuration-reference.searchable, cols="80,.^10,.^10"]
@@ -9,6 +8,10 @@ h|Type
 h|Default
 
 a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-from]] [.property-path]##link:#quarkus-business-score-mailer_quarkus-business-score-mailer-from[`quarkus.business-score.mailer.from`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.business-score.mailer.from+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -26,6 +29,10 @@ endif::add-copy-button-to-env-var[]
 |required icon:exclamation-circle[title=Configuration property is required]
 
 a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-to]] [.property-path]##link:#quarkus-business-score-mailer_quarkus-business-score-mailer-to[`quarkus.business-score.mailer.to`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.business-score.mailer.to+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -43,6 +50,10 @@ endif::add-copy-button-to-env-var[]
 |required icon:exclamation-circle[title=Configuration property is required]
 
 a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-subject]] [.property-path]##link:#quarkus-business-score-mailer_quarkus-business-score-mailer-subject[`quarkus.business-score.mailer.subject`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.business-score.mailer.subject+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -61,5 +72,3 @@ endif::add-copy-button-to-env-var[]
 
 |===
 
-
-:!summaryTableId:
