@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.quarkiverse.businessscore</groupId>
         <artifactId>quarkus-business-score-health-parent</artifactId>
-        <version>1.0.0</version>
+        <version>999-SNAPSHOT</version>
     </parent>
     <artifactId>quarkus-business-score-health-deployment</artifactId>
     <name>Quarkus Business Score - Health - Deployment</name>
