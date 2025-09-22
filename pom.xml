@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.quarkiverse</groupId>
@@ -10,7 +8,7 @@
     </parent>
     <groupId>io.quarkiverse.businessscore</groupId>
     <artifactId>quarkus-business-score-parent</artifactId>
-    <version>999-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>Quarkus Business Score - Parent</name>
     <modules>
@@ -26,7 +24,7 @@
         <developerConnection>
             scm:git:git@github.com:quarkiverse/quarkus-business-score.git</developerConnection>
         <url>https://github.com/quarkiverse/quarkus-business-score</url>
-        <tag>HEAD</tag>
+        <tag>1.0.0</tag>
     </scm>
     <properties>
         <quarkus.version>3.20.2.2</quarkus.version>
