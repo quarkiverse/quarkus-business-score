@@ -7,7 +7,7 @@ h|[.header-title]##Configuration property##
 h|Type
 h|Default
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-from]] [.property-path]##link:#quarkus-business-score-mailer_quarkus-business-score-mailer-from[`quarkus.business-score.mailer.from`]##
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-from]] [.property-path]##link:#quarkus-business-score-mailer_quarkus-business-score-mailer-from[`+++quarkus.business-score.mailer.from+++`]##
 ifdef::add-copy-button-to-config-props[]
 config_property_copy_button:+++quarkus.business-score.mailer.from+++[]
 endif::add-copy-button-to-config-props[]
@@ -28,7 +28,7 @@ endif::add-copy-button-to-env-var[]
 |string
 |required icon:exclamation-circle[title=Configuration property is required]
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-to]] [.property-path]##link:#quarkus-business-score-mailer_quarkus-business-score-mailer-to[`quarkus.business-score.mailer.to`]##
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-to]] [.property-path]##link:#quarkus-business-score-mailer_quarkus-business-score-mailer-to[`+++quarkus.business-score.mailer.to+++`]##
 ifdef::add-copy-button-to-config-props[]
 config_property_copy_button:+++quarkus.business-score.mailer.to+++[]
 endif::add-copy-button-to-config-props[]
@@ -49,7 +49,7 @@ endif::add-copy-button-to-env-var[]
 |string
 |required icon:exclamation-circle[title=Configuration property is required]
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-subject]] [.property-path]##link:#quarkus-business-score-mailer_quarkus-business-score-mailer-subject[`quarkus.business-score.mailer.subject`]##
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score-mailer_quarkus-business-score-mailer-subject]] [.property-path]##link:#quarkus-business-score-mailer_quarkus-business-score-mailer-subject[`+++quarkus.business-score.mailer.subject+++`]##
 ifdef::add-copy-button-to-config-props[]
 config_property_copy_button:+++quarkus.business-score.mailer.subject+++[]
 endif::add-copy-button-to-config-props[]
@@ -68,7 +68,7 @@ Environment variable: `+++QUARKUS_BUSINESS_SCORE_MAILER_SUBJECT+++`
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`[ZOMBIE DETECTED] {appName}:{appVersion}`
+|`+++[ZOMBIE DETECTED] {appName}:{appVersion}+++`
 
 |===
 
