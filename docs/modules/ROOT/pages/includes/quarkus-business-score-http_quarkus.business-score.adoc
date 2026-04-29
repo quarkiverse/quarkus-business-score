@@ -7,7 +7,7 @@ h|[.header-title]##Configuration property##
 h|Type
 h|Default
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score-http_quarkus-business-score-http-root-path]] [.property-path]##link:#quarkus-business-score-http_quarkus-business-score-http-root-path[`quarkus.business-score.http.root-path`]##
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score-http_quarkus-business-score-http-root-path]] [.property-path]##link:#quarkus-business-score-http_quarkus-business-score-http-root-path[`+++quarkus.business-score.http.root-path+++`]##
 ifdef::add-copy-button-to-config-props[]
 config_property_copy_button:+++quarkus.business-score.http.root-path+++[]
 endif::add-copy-button-to-config-props[]
@@ -28,7 +28,7 @@ Environment variable: `+++QUARKUS_BUSINESS_SCORE_HTTP_ROOT_PATH+++`
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`business-score`
+|`+++business-score+++`
 
 |===
 

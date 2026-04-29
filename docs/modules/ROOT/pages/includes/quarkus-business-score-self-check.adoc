@@ -7,7 +7,7 @@ h|[.header-title]##Configuration property##
 h|Type
 h|Default
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score-self-check_quarkus-business-score-self-check-cron]] [.property-path]##link:#quarkus-business-score-self-check_quarkus-business-score-self-check-cron[`quarkus.business-score.self-check.cron`]##
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score-self-check_quarkus-business-score-self-check-cron]] [.property-path]##link:#quarkus-business-score-self-check_quarkus-business-score-self-check-cron[`+++quarkus.business-score.self-check.cron+++`]##
 ifdef::add-copy-button-to-config-props[]
 config_property_copy_button:+++quarkus.business-score.self-check.cron+++[]
 endif::add-copy-button-to-config-props[]
@@ -28,9 +28,9 @@ Environment variable: `+++QUARKUS_BUSINESS_SCORE_SELF_CHECK_CRON+++`
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`0 0 0/6 * * ?`
+|`+++0 0 0/6 * * ?+++`
 
-a|icon:lock[title=Fixed at build time] [[quarkus-business-score-self-check_quarkus-business-score-self-check-auto-exit]] [.property-path]##link:#quarkus-business-score-self-check_quarkus-business-score-self-check-auto-exit[`quarkus.business-score.self-check.auto-exit`]##
+a|icon:lock[title=Fixed at build time] [[quarkus-business-score-self-check_quarkus-business-score-self-check-auto-exit]] [.property-path]##link:#quarkus-business-score-self-check_quarkus-business-score-self-check-auto-exit[`+++quarkus.business-score.self-check.auto-exit+++`]##
 ifdef::add-copy-button-to-config-props[]
 config_property_copy_button:+++quarkus.business-score.self-check.auto-exit+++[]
 endif::add-copy-button-to-config-props[]
@@ -49,7 +49,7 @@ Environment variable: `+++QUARKUS_BUSINESS_SCORE_SELF_CHECK_AUTO_EXIT+++`
 endif::add-copy-button-to-env-var[]
 --
 |boolean
-|`false`
+|`+++false+++`
 
 |===
 
