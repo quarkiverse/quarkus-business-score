@@ -28,7 +28,7 @@
     </scm>
     <properties>
         <quarkus.version>3.33.1</quarkus.version>
-        <sundrio.version>0.230.2</sundrio.version>
+        <sundrio.version>0.300.0</sundrio.version>
     </properties>
     <dependencyManagement>
         <dependencies>
