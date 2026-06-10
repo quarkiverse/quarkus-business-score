@@ -27,7 +27,7 @@
         <tag>HEAD</tag>
     </scm>
     <properties>
-        <quarkus.version>3.33.1</quarkus.version>
+        <quarkus.version>3.36.2</quarkus.version>
         <sundrio.version>0.300.0</sundrio.version>
     </properties>
     <dependencyManagement>
